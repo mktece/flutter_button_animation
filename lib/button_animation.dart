@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_party_event_planner/dashboard.dart';
+import 'package:page_transition/page_transition.dart';
 
 class ButtonAnimation extends StatefulWidget {
   final Color primaryColor;
@@ -58,6 +60,7 @@ class _ButtonAnimationState extends State<ButtonAnimation> with TickerProviderSt
         _scaleAnimationController.reverse();
         _fadeAnimationController.forward();
         _animationController.forward();
+        Navigator.push(context, PageTransition(type: PageTransitionType.fade, child: Dashboard()));
       }
     });
 
